@@ -107,7 +107,7 @@ async def on_ready():
 
 @bot.command()
 async def odezwijsie(ctx):
-    await ctx.send("Cweloza to choroba zakaźna")
+    await ctx.send("Kocham piwo")
 
 @bot.command()
 async def start(ctx):
@@ -116,9 +116,9 @@ async def start(ctx):
 @bot.command()
 async def VCKick(ctx):
     if ctx.author.nick == None:
-        temp = str(ctx.author.name) + " to jebany cwel"
+        temp = str(ctx.author.name) + " jest nie miły"
     else:
-        temp = str(ctx.author.nick) + " to jebany cwel"
+        temp = str(ctx.author.nick) + " jest nie miły"
     await ctx.send(temp)
 
 
@@ -143,4 +143,4 @@ async def watcher():
     global voice_channel_queue
     await parse_members(voice_channel_queue.members)
 
-bot.run('MTE5Nzg4MjE4OTg1NDAxNTU4OA.Gn7BAL.7lN5E5oeym-OqpBoN-i1Os026EYlI7_HZSgk5I')
+bot.run('token api discorda')
