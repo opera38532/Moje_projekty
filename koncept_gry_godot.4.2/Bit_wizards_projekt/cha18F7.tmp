@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=3 uid="uid://f4mc7rcl8gsi"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_nv2y1"]
+[ext_resource type="Texture2D" uid="uid://d0pk5hq8ixjdv" path="res://Assets/lich.png" id="2_6g41o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ghyj"]
+atlas = ExtResource("2_6g41o")
+region = Rect2(46, 0, 23, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrgad"]
+atlas = ExtResource("2_6g41o")
+region = Rect2(138, 0, 23, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jt3dn"]
+atlas = ExtResource("2_6g41o")
+region = Rect2(0, 0, 23, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epbpk"]
+atlas = ExtResource("2_6g41o")
+region = Rect2(23, 0, 23, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urruj"]
+atlas = ExtResource("2_6g41o")
+region = Rect2(161, 0, 23, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5ebo"]
+atlas = ExtResource("2_6g41o")
+region = Rect2(92, 0, 23, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op502"]
+atlas = ExtResource("2_6g41o")
+region = Rect2(69, 0, 23, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puu7a"]
+atlas = ExtResource("2_6g41o")
+region = Rect2(115, 0, 23, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_270wp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ghyj")
+}],
+"loop": false,
+"name": &"0 1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrgad")
+}],
+"loop": false,
+"name": &"0 2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jt3dn")
+}],
+"loop": false,
+"name": &"1 0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epbpk")
+}],
+"loop": false,
+"name": &"1 1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urruj")
+}],
+"loop": false,
+"name": &"1 2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5ebo")
+}],
+"loop": false,
+"name": &"2 0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op502")
+}],
+"loop": false,
+"name": &"2 1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puu7a")
+}],
+"loop": false,
+"name": &"2 2",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xf2pk"]
+radius = 4.0
+height = 20.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_nv2y1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -17)
+sprite_frames = SubResource("SpriteFrames_270wp")
+animation = &"1 0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xf2pk")

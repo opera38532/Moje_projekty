@@ -1,0 +1,3 @@
+layer 1: player-environment
+layer 2: harvestable hit detection
+layer 3: 

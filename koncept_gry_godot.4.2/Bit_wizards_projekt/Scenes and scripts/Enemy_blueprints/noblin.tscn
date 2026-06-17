@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://uwgy5b5858dw"]
+
+[ext_resource type="Texture2D" uid="uid://bsivxe6r50lxo" path="res://Assets/Noblin.png" id="1_bogls"]
+[ext_resource type="Script" uid="uid://eggp1ct7vqkc" path="res://Scenes and scripts/Enemy_blueprints/noblin.gd" id="1_cctga"]
+[ext_resource type="PackedScene" uid="uid://c38pcx2i7xgav" path="res://Scenes and scripts/Binary display/binary_display_unit.tscn" id="2_moek8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c74es"]
+atlas = ExtResource("1_bogls")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl22u"]
+atlas = ExtResource("1_bogls")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qmb1"]
+atlas = ExtResource("1_bogls")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgutj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c74es")
+}],
+"loop": true,
+"name": &"archer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl22u")
+}],
+"loop": true,
+"name": &"berserk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qmb1")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[node name="Noblin" type="Node2D"]
+script = ExtResource("1_cctga")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mgutj")
+animation = &"berserk"
+
+[node name="binary_display_central" parent="." instance=ExtResource("2_moek8")]
+position = Vector2(7, -31)
+scale = Vector2(0.5, 0.5)

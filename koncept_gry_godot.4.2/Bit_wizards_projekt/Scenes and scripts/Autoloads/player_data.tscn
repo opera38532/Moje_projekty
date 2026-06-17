@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://brs4qid1bljv4"]
+
+[ext_resource type="Script" path="res://Scenes and scripts/Autoloads/player_data.gd" id="1_pgoht"]
+[ext_resource type="Script" path="res://Scenes and scripts/Autoloads/Inventory.gd" id="2_qo2ek"]
+
+[node name="Player_data" type="Node"]
+script = ExtResource("1_pgoht")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("2_qo2ek")

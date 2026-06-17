@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuk7jqhdxfwvb"]
+
+[ext_resource type="Theme" uid="uid://cg26moqwfrite" path="res://Memory resources/Non custom/fight_ui.tres" id="1_7wbsb"]
+[ext_resource type="Script" path="res://Scenes and scripts/UI/Inventory display.gd" id="2_264qf"]
+[ext_resource type="PackedScene" uid="uid://p8n4p7yuoupm" path="res://Scenes and scripts/UI/inventory_display_entry.tscn" id="3_alng7"]
+[ext_resource type="Texture2D" uid="uid://rglaf7os6511" path="res://Assets/Item icons/missing_icon.png" id="4_i17gk"]
+
+[node name="Hud camera" type="Camera2D"]
+
+[node name="Inventory display" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+theme = ExtResource("1_7wbsb")
+script = ExtResource("2_264qf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory display"]
+layout_mode = 2
+offset_left = 563.0
+offset_top = 10.0
+offset_right = 635.0
+offset_bottom = 350.0
+
+[node name="TextureRect" parent="Inventory display/VBoxContainer" instance=ExtResource("3_alng7")]
+layout_mode = 2
+texture = ExtResource("4_i17gk")

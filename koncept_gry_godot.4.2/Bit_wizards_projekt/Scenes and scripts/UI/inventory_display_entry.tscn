@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://p8n4p7yuoupm"]
+
+[ext_resource type="Texture2D" uid="uid://ctaav5b4kwt4v" path="res://Assets/Item icons/Material/deadwood.png" id="1_48gy4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5jqfj"]
+shadow_size = 0
+
+[node name="TextureRect" type="TextureRect"]
+texture = ExtResource("1_48gy4")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.458333
+anchor_top = 0.15625
+anchor_right = 0.972222
+anchor_bottom = 0.875
+grow_horizontal = 0
+grow_vertical = 2
+text = "x999"
+label_settings = SubResource("LabelSettings_5jqfj")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

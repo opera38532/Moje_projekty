@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cg26moqwfrite"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_op5d8"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h7ev"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[resource]
+default_font_size = 20
+Panel/styles/panel = SubResource("StyleBoxFlat_op5d8")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_6h7ev")

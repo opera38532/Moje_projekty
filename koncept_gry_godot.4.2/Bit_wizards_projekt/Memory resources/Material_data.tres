@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cscqbtstk8k2r"]
+
+[ext_resource type="Script" path="res://Memory resources/Material_data.gd" id="1_4avwr"]
+
+[resource]
+script = ExtResource("1_4avwr")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c38pcx2i7xgav"]
+
+[ext_resource type="Script" path="res://Scenes and scripts/Binary display/binary_display_unit.gd" id="1_q4v4i"]
+[ext_resource type="Texture2D" uid="uid://ctd5stp1pfgcn" path="res://Assets/bit.png" id="2_lluon"]
+
+[node name="binary_display_central" type="Node2D"]
+position = Vector2(130, 41)
+script = ExtResource("1_q4v4i")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -70.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("2_lluon")
+stretch_mode = 1

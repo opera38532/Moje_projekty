@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://ill1gghswgn7"]
+
+[ext_resource type="Script" path="res://Scenes and scripts/Class scripts/Tree_class.gd" id="1_4qhdt"]
+[ext_resource type="Texture2D" uid="uid://bfpr5m6i60ab6" path="res://Assets/Harvestables/Trees/deadwood/deadwood1stump.png" id="2_b6cwk"]
+[ext_resource type="Texture2D" uid="uid://blrsk8wknr7sl" path="res://Assets/Harvestables/Trees/deadwood/deadwood1crown.png" id="3_p7myn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4u3e7"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="Animation" id="Animation_qeec4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("crown:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2qm1m"]
+resource_name = "falling down"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("crown:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(7.21001, 7.21001),
+"update": 0,
+"values": [0.0, -1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("crown:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 4.5),
+"transitions": PackedFloat32Array(0.353554, 0.353554),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38xvt"]
+_data = {
+"RESET": SubResource("Animation_qeec4"),
+"falling down": SubResource("Animation_2qm1m")
+}
+
+[node name="Deadwood tree" type="Node2D"]
+script = ExtResource("1_4qhdt")
+hp = 5
+tier = 1
+
+[node name="stump" type="Sprite2D" parent="."]
+position = Vector2(-1, -52)
+texture = ExtResource("2_b6cwk")
+
+[node name="crown" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+texture = ExtResource("3_p7myn")
+offset = Vector2(-1, -45)
+
+[node name="Collision" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4u3e7")
+
+[node name="Hitbox" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+polygon = PackedVector2Array(6, -23, 7, -7, 13, 4, 5, 8, -5, 8, -13, 3, -7, -6, -9, -23)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_38xvt")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbs4nb4k11g01"]
+
+[ext_resource type="Texture2D" uid="uid://ctd5stp1pfgcn" path="res://Assets/bit.png" id="1_bb57t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0adjy"]
+atlas = ExtResource("1_bb57t")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xfif"]
+atlas = ExtResource("1_bb57t")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhp41"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0adjy")
+}],
+"loop": false,
+"name": &"0",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xfif")
+}],
+"loop": false,
+"name": &"1",
+"speed": 1.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_nhp41")
+animation = &"0"

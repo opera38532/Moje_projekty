@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ctx1pj6yusm0n"]
+
+[ext_resource type="Script" path="res://Memory resources/Spell_data.gd" id="1_yo7q5"]
+
+[resource]
+script = ExtResource("1_yo7q5")

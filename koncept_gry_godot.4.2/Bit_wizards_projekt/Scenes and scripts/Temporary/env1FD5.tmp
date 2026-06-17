@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://vd4wwbnvdt3i"]
+
+[ext_resource type="Script" path="res://Scenes and scripts/Temporary/env_1.gd" id="1_hmdki"]
+[ext_resource type="Theme" uid="uid://cg26moqwfrite" path="res://fight_ui.tres" id="3_qvm7d"]
+[ext_resource type="Script" path="res://Scenes and scripts/Temporary/Label.gd" id="4_04mud"]
+
+[node name="Fight_controller" type="Node"]
+script = ExtResource("1_hmdki")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 394.0
+offset_bottom = 55.0
+theme = ExtResource("3_qvm7d")
+text = "damage sustained: 0"
+script = ExtResource("4_04mud")
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -27.5
+offset_right = 95.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_qvm7d")
+text = "Fight over"

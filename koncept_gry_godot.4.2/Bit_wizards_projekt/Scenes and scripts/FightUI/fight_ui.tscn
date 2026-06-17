@@ -1,0 +1,244 @@
+[gd_scene load_steps=9 format=3 uid="uid://r1f0aclqsdmm"]
+
+[ext_resource type="Theme" uid="uid://cg26moqwfrite" path="res://Memory resources/Non custom/fight_ui.tres" id="1_3xwbj"]
+[ext_resource type="Script" path="res://Scenes and scripts/FightUI/fight_ui.gd" id="2_mnayd"]
+[ext_resource type="Script" path="res://Scenes and scripts/FightUI/action_panel.gd" id="3_d24h8"]
+[ext_resource type="Script" path="res://Scenes and scripts/Class scripts/Utility/place_holder_button_class.gd" id="4_hkqgk"]
+[ext_resource type="Script" path="res://Scenes and scripts/FightUI/target panel.gd" id="5_q1nrg"]
+[ext_resource type="Script" path="res://Scenes and scripts/FightUI/modifier panel.gd" id="6_8f5uw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7cuh"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.442929, 0.955992, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fgjj"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.776365, 0.000806286, 0.833609, 1)
+
+[node name="fight_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3xwbj")
+script = ExtResource("2_mnayd")
+
+[node name="Action panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_d24h8")
+
+[node name="GridContainer" type="GridContainer" parent="Action panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0359375
+anchor_top = -0.133333
+anchor_right = 0.964063
+anchor_bottom = 0.833333
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 8
+columns = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "                           "
+
+[node name="Label2" type="Label" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "                           "
+
+[node name="Label3" type="Label" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "                           "
+
+[node name="Label4" type="Label" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "                           "
+
+[node name="place_holder_button" type="Button" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button2" type="Button" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button3" type="Button" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button4" type="Button" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button5" type="Button" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button6" type="Button" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button7" type="Button" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button8" type="Button" parent="Action panel/GridContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="Target panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d7cuh")
+script = ExtResource("5_q1nrg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Target panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="place_holder_button" type="Button" parent="Target panel/VBoxContainer"]
+layout_mode = 2
+text = "Serek"
+script = ExtResource("4_hkqgk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Target panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="place_holder_button" type="Button" parent="Target panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button2" type="Button" parent="Target panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button3" type="Button" parent="Target panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button4" type="Button" parent="Target panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="Modifier panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6fgjj")
+script = ExtResource("6_8f5uw")
+
+[node name="Direction container" type="VBoxContainer" parent="Modifier panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="place_holder_button" type="Button" parent="Modifier panel/Direction container"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button2" type="Button" parent="Modifier panel/Direction container"]
+layout_mode = 2
+text = "Piwo"
+script = ExtResource("4_hkqgk")
+
+[node name="Position container" type="HBoxContainer" parent="Modifier panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -31.5
+offset_right = 54.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="place_holder_button2" type="Button" parent="Modifier panel/Position container"]
+layout_mode = 2
+text = " 0 "
+script = ExtResource("4_hkqgk")
+
+[node name="place_holder_button3" type="Button" parent="Modifier panel/Position container"]
+layout_mode = 2
+text = " 1 "
+script = ExtResource("4_hkqgk")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_bottom = 50.0
+grow_horizontal = 0
+text = "Generate new fight"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
